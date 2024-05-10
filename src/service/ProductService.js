@@ -146,8 +146,6 @@ const ProductService = {
             };
         }
 
-        console.log('searchCondition', searchCondition);
-
         try {
             const totalProductsCount = await Product.count({
                 where: searchCondition,

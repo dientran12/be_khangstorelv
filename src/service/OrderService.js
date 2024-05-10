@@ -296,7 +296,6 @@ const OrderService = {
             const totalRevenue = await db.Order.sum('totalAmount', {
                 where: { status: 'fulfilled' }
             });
-            console.log('Total revenue:', totalRevenue); // Ghi log tổng doanh thu
             if (totalRevenue === null) {
                 throw new Error('Unable to calculate total revenue');
             }

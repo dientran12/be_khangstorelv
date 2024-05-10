@@ -20,6 +20,10 @@ const createUsers = async (req, res) => {
         }
 
         const response = await UserService.createNewUser(req.body);
+
+        if (response.status === 'error') {
+            return res.status(400).json(response);
+        }
         return res.status(200).json(response);
     } catch (e) {
         console.log(e);
